@@ -11,6 +11,13 @@ with open(filename, "r" ,encoding="utf8") as csv_file:
     headers = next(csv_reader)
     data_country = [{k: v for (k, v) in zip(headers, row)} for row in csv_reader]
 
+# get city data from csv file
+filename = "world_table_city.csv"
+with open(filename, "r" ,encoding="utf8") as csv_file:
+    csv_reader = csv.reader(csv_file)
+    headers = next(csv_reader)
+    data_city = [{k: v for (k, v) in zip(headers, row)} for row in csv_reader]
+
 # create an instance of class FastAPI named "app"
 app = FastAPI()
 
